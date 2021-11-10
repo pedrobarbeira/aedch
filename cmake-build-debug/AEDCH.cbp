@@ -89,6 +89,9 @@
 		<Unit filename="C:/Coding/Cpp/AEDCH/main.cpp">
 			<Option target="AEDCH"/>
 		</Unit>
+		<Unit filename="C:/Coding/Cpp/AEDCH/matriculas.cpp">
+			<Option target="AEDCH"/>
+		</Unit>
 		<Unit filename="C:/Coding/Cpp/AEDCH/numerosarranjadinhos1.cpp">
 			<Option target="AEDCH"/>
 		</Unit>

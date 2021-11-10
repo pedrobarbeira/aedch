@@ -5,5 +5,7 @@ CMakeFiles/AEDCH.dir/challenge1fix.cpp.obj: ../challenge1fix.cpp
 
 CMakeFiles/AEDCH.dir/main.cpp.obj: ../main.cpp
 
+CMakeFiles/AEDCH.dir/matriculas.cpp.obj: ../matriculas.cpp
+
 CMakeFiles/AEDCH.dir/numerosarranjadinhos1.cpp.obj: ../numerosarranjadinhos1.cpp
 

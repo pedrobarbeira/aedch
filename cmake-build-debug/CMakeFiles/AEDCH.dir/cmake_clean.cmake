@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "AEDCH.pdb"
   "CMakeFiles/AEDCH.dir/challenge1fix.cpp.obj"
   "CMakeFiles/AEDCH.dir/main.cpp.obj"
+  "CMakeFiles/AEDCH.dir/matriculas.cpp.obj"
   "CMakeFiles/AEDCH.dir/numerosarranjadinhos1.cpp.obj"
   "libAEDCH.dll.a"
 )

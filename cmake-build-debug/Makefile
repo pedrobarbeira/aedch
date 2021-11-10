@@ -196,6 +196,33 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+matriculas.obj: matriculas.cpp.obj
+
+.PHONY : matriculas.obj
+
+# target to build an object file
+matriculas.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/matriculas.cpp.obj
+.PHONY : matriculas.cpp.obj
+
+matriculas.i: matriculas.cpp.i
+
+.PHONY : matriculas.i
+
+# target to preprocess a source file
+matriculas.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/matriculas.cpp.i
+.PHONY : matriculas.cpp.i
+
+matriculas.s: matriculas.cpp.s
+
+.PHONY : matriculas.s
+
+# target to generate assembly for a file
+matriculas.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/matriculas.cpp.s
+.PHONY : matriculas.cpp.s
+
 numerosarranjadinhos1.obj: numerosarranjadinhos1.cpp.obj
 
 .PHONY : numerosarranjadinhos1.obj
@@ -238,6 +265,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... matriculas.obj
+	@echo ... matriculas.i
+	@echo ... matriculas.s
 	@echo ... numerosarranjadinhos1.obj
 	@echo ... numerosarranjadinhos1.i
 	@echo ... numerosarranjadinhos1.s
