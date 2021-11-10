@@ -6,7 +6,7 @@ static int Z_VAL = 22;          //fix for portuguese alphabet
 static int X_VAL = 21;          //fix for portuguese alphabet
 static int BIG_LETTER = 23;     //increment of 1 big letter i.e: BA-00-00 = 23 small letters
 static int GEN_VAL = 5290000;   //number of plates per generation:
-                                // (23 (big letters) * 23 (small letters) * 10000 (numbers)
+// (23 (big letters) * 23 (small letters) * 10000 (numbers)
 
 /**
  * An invaluable ally during implementation. Through this function it's possible
@@ -63,10 +63,11 @@ void generation(std::string m, char& c){
             c = '2';
             //00-AA-00 is 3rd generation
         else if (isalpha(m[3]) && isValid(m[3]) && isalpha(m[4]) && isValid(m[4]) &&
-                isdigit(m[0]) && isdigit(m[1]) && isdigit(m[6]) && isdigit(m[7]))
+                 isdigit(m[0]) && isdigit(m[1]) && isdigit(m[6]) && isdigit(m[7]))
             c = '3';
+        else c = '5';
     }
-    //An invalid plate has been entered. Triggers error response
+        //An invalid plate has been entered. Triggers error response
     else c = '5';
 }
 
@@ -142,18 +143,18 @@ void reorder(std::string& m, const char c){
     switch(c){
         //Already normalized
         case '1':return;
-        // Turns 00-00-AA into AA-00-00
+            // Turns 00-00-AA into AA-00-00
         case '2':
             temp1 = m.substr(6, 2); //AA
             temp2 = m.substr(0, 5); //00-00
             m = temp1 + "-" + temp2; //AA-00-00
             return;
-        //Turns 00-AA-00 into AA-00-00
+            //Turns 00-AA-00 into AA-00-00
         case '3':
             temp1 = m.substr(3, 2); //AA
             m = temp1 + "-" + m.substr(0, 2) + "-" + m.substr(6,2); //AA-00-00
             return;
-        //Turns AA-00-AA into AA-AA-00
+            //Turns AA-00-AA into AA-AA-00
         case '4':
             temp1 = m.substr(6,2); //00
             temp2 = m.substr(3, 2); //AA
@@ -270,7 +271,7 @@ long long int calcVal(std::string& m, const char c){
         letterCalc(m[4], 4, value, true);
         value += (m[6] - '0') * 10 + (m[7] - '0');
     }
-    //Handles standard cases
+        //Handles standard cases
     else{
         //Process first value with special cases
         letterCalc(m[0], 0, value, false);
@@ -295,6 +296,9 @@ void parse(std::string& m1, std::string& m2, char& c1, char& c2){
     //Determines the generation of each plate
     generation(m1, c1);
     generation(m2, c2);
+
+    //Terminates if there were invalid plates
+    if(c1 == '5' || c2 == '5') return;
 
     //Normalizes the plate number to XX-NN-NN format
     reorder(m1,c1);
@@ -335,7 +339,11 @@ void readInput(std::vector<std::vector<std::string>>& matriculas){
  * I.E: AA-00-00 would be 0, AA-23-00 would be 2300, 00-00-AA would be 5290000
  * @return 0 upon success
  */
-int matriculas() {
+int main() {
+    std::string m = "AA-00-00";
+    char g;
+    generation(m, g);
+
     long long int i1, i2;
     std::string m1, m2; //matriculas
     char g1, g2; //gerações
@@ -359,11 +367,10 @@ int matriculas() {
         }
         else //Calls parser to normalize/order the plates and retrieve their generations
             parse(m1, m2, g1, g2);
-
         //Alerts the user if any invalid plates were entered.
-        if (g1 == '5') std::cout << "Invalid Plate: " << m1 << std::endl;
+        if (g1 == '5' && g2 == '5') std::cout << "Ivalid Plates: " << m1 << " " << m2 << std::endl;
+        else if (g1 == '5') std::cout << "Invalid Plate: " << m1 << std::endl;
         else if (g2 == '5') std::cout << "Ivalid Plate: " << m2 << std::endl;
-        else if (g1 == '5' && g2 == '5') std::cout << "Ivalid Plates: " << m1 << " " << m2 << std::endl;
         else {
             //Calculates the numerical equivalent of each plate
             i1 = calcVal(m1, g1);
