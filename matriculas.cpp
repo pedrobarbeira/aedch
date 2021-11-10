@@ -57,14 +57,14 @@ void generation(std::string m, char& c){
             else if (isdigit(m[6]) && isdigit(m[7]))
                 c = '1';
         }
+            //00-00-AAis 2nd generation
+        else if (isalpha(m[6]) && isValid(m[6]) && isalpha(m[7]) && isValid(m[7]) &&
+                 isdigit(m[0]) && isdigit(m[1]) && isdigit(m[3]) && isdigit(m[4]))
+            c = '2';
             //00-AA-00 is 3rd generation
         else if (isalpha(m[3]) && isValid(m[3]) && isalpha(m[4]) && isValid(m[4]) &&
                 isdigit(m[0]) && isdigit(m[1]) && isdigit(m[6]) && isdigit(m[7]))
             c = '3';
-            //00-00-AAis 2nd generation
-        else if (isalpha(m[6]) && isValid(m[6]) && isalpha(m[7]) && isValid(m[7]) &&
-                isdigit(m[0]) && isdigit(m[1]) && isdigit(m[3]) && isdigit(m[4]))
-            c = '2';
     }
     //An invalid plate has been entered. Triggers error response
     else c = '5';
