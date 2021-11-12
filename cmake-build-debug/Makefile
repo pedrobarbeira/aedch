@@ -142,6 +142,33 @@ AEDCH/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/build
 .PHONY : AEDCH/fast
 
+arranjadoes.obj: arranjadoes.cpp.obj
+
+.PHONY : arranjadoes.obj
+
+# target to build an object file
+arranjadoes.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/arranjadoes.cpp.obj
+.PHONY : arranjadoes.cpp.obj
+
+arranjadoes.i: arranjadoes.cpp.i
+
+.PHONY : arranjadoes.i
+
+# target to preprocess a source file
+arranjadoes.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/arranjadoes.cpp.i
+.PHONY : arranjadoes.cpp.i
+
+arranjadoes.s: arranjadoes.cpp.s
+
+.PHONY : arranjadoes.s
+
+# target to generate assembly for a file
+arranjadoes.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/arranjadoes.cpp.s
+.PHONY : arranjadoes.cpp.s
+
 challenge1fix.obj: challenge1fix.cpp.obj
 
 .PHONY : challenge1fix.obj
@@ -259,6 +286,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... AEDCH
+	@echo ... arranjadoes.obj
+	@echo ... arranjadoes.i
+	@echo ... arranjadoes.s
 	@echo ... challenge1fix.obj
 	@echo ... challenge1fix.i
 	@echo ... challenge1fix.s

@@ -6,11 +6,9 @@
 
 #IncludeRegexTransform: 
 
-C:/Coding/Cpp/AEDCH/main.cpp
+C:/Coding/Cpp/AEDCH/numerosarranjadinhos1.cpp
 iostream
 -
 vector
--
-cmath
 -
 

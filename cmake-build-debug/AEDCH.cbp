@@ -80,7 +80,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Coding/Cpp/AEDCH/challenge1.h">
+		<Unit filename="C:/Coding/Cpp/AEDCH/arranjadoes.cpp">
 			<Option target="AEDCH"/>
 		</Unit>
 		<Unit filename="C:/Coding/Cpp/AEDCH/challenge1fix.cpp">
