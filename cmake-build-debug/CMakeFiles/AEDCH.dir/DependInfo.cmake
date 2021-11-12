@@ -4,11 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Coding/Cpp/AEDCH/arranjadoes.cpp" "C:/Coding/Cpp/AEDCH/cmake-build-debug/CMakeFiles/AEDCH.dir/arranjadoes.cpp.obj"
-  "C:/Coding/Cpp/AEDCH/challenge1fix.cpp" "C:/Coding/Cpp/AEDCH/cmake-build-debug/CMakeFiles/AEDCH.dir/challenge1fix.cpp.obj"
   "C:/Coding/Cpp/AEDCH/main.cpp" "C:/Coding/Cpp/AEDCH/cmake-build-debug/CMakeFiles/AEDCH.dir/main.cpp.obj"
-  "C:/Coding/Cpp/AEDCH/matriculas.cpp" "C:/Coding/Cpp/AEDCH/cmake-build-debug/CMakeFiles/AEDCH.dir/matriculas.cpp.obj"
-  "C:/Coding/Cpp/AEDCH/numerosarranjadinhos1.cpp" "C:/Coding/Cpp/AEDCH/cmake-build-debug/CMakeFiles/AEDCH.dir/numerosarranjadinhos1.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

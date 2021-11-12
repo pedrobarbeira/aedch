@@ -142,60 +142,6 @@ AEDCH/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/build
 .PHONY : AEDCH/fast
 
-arranjadoes.obj: arranjadoes.cpp.obj
-
-.PHONY : arranjadoes.obj
-
-# target to build an object file
-arranjadoes.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/arranjadoes.cpp.obj
-.PHONY : arranjadoes.cpp.obj
-
-arranjadoes.i: arranjadoes.cpp.i
-
-.PHONY : arranjadoes.i
-
-# target to preprocess a source file
-arranjadoes.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/arranjadoes.cpp.i
-.PHONY : arranjadoes.cpp.i
-
-arranjadoes.s: arranjadoes.cpp.s
-
-.PHONY : arranjadoes.s
-
-# target to generate assembly for a file
-arranjadoes.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/arranjadoes.cpp.s
-.PHONY : arranjadoes.cpp.s
-
-challenge1fix.obj: challenge1fix.cpp.obj
-
-.PHONY : challenge1fix.obj
-
-# target to build an object file
-challenge1fix.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/challenge1fix.cpp.obj
-.PHONY : challenge1fix.cpp.obj
-
-challenge1fix.i: challenge1fix.cpp.i
-
-.PHONY : challenge1fix.i
-
-# target to preprocess a source file
-challenge1fix.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/challenge1fix.cpp.i
-.PHONY : challenge1fix.cpp.i
-
-challenge1fix.s: challenge1fix.cpp.s
-
-.PHONY : challenge1fix.s
-
-# target to generate assembly for a file
-challenge1fix.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/challenge1fix.cpp.s
-.PHONY : challenge1fix.cpp.s
-
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -223,60 +169,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-matriculas.obj: matriculas.cpp.obj
-
-.PHONY : matriculas.obj
-
-# target to build an object file
-matriculas.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/matriculas.cpp.obj
-.PHONY : matriculas.cpp.obj
-
-matriculas.i: matriculas.cpp.i
-
-.PHONY : matriculas.i
-
-# target to preprocess a source file
-matriculas.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/matriculas.cpp.i
-.PHONY : matriculas.cpp.i
-
-matriculas.s: matriculas.cpp.s
-
-.PHONY : matriculas.s
-
-# target to generate assembly for a file
-matriculas.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/matriculas.cpp.s
-.PHONY : matriculas.cpp.s
-
-numerosarranjadinhos1.obj: numerosarranjadinhos1.cpp.obj
-
-.PHONY : numerosarranjadinhos1.obj
-
-# target to build an object file
-numerosarranjadinhos1.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/numerosarranjadinhos1.cpp.obj
-.PHONY : numerosarranjadinhos1.cpp.obj
-
-numerosarranjadinhos1.i: numerosarranjadinhos1.cpp.i
-
-.PHONY : numerosarranjadinhos1.i
-
-# target to preprocess a source file
-numerosarranjadinhos1.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/numerosarranjadinhos1.cpp.i
-.PHONY : numerosarranjadinhos1.cpp.i
-
-numerosarranjadinhos1.s: numerosarranjadinhos1.cpp.s
-
-.PHONY : numerosarranjadinhos1.s
-
-# target to generate assembly for a file
-numerosarranjadinhos1.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/numerosarranjadinhos1.cpp.s
-.PHONY : numerosarranjadinhos1.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -286,21 +178,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... AEDCH
-	@echo ... arranjadoes.obj
-	@echo ... arranjadoes.i
-	@echo ... arranjadoes.s
-	@echo ... challenge1fix.obj
-	@echo ... challenge1fix.i
-	@echo ... challenge1fix.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... matriculas.obj
-	@echo ... matriculas.i
-	@echo ... matriculas.s
-	@echo ... numerosarranjadinhos1.obj
-	@echo ... numerosarranjadinhos1.i
-	@echo ... numerosarranjadinhos1.s
 .PHONY : help
 
 

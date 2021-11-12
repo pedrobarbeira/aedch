@@ -3,4 +3,4 @@ project(AEDCH)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(AEDCH main.cpp matriculas.cpp challenge1fix.cpp numerosarranjadinhos1.cpp matriculas.cpp arranjadoes.cpp)
+add_executable(AEDCH main.cpp)
