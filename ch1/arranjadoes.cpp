@@ -1,3 +1,35 @@
+//Created by Pedro Barbeira on 11/11/2021
+/*
+ *  This code was written to solve the last of a set of proposed weekly
+ * problems for a Data Structures and Algorithms course at Faculdade
+ * de Engenharia da Univesidade do Porto (FEUP).
+ *  The challenge was to make a script that received a number N and a
+ * target K and figured out the closest higher number in which the
+ * sum of all it's digits equaled K. For example, if N = 12345
+ * and K = 14 the answer would be 12353, since 1+2+3+5+3=14.
+ *  This particular solution is for a modified form of the problem
+ * where we're supposed to handle both large numbers of inputs and
+ * large input numbers. The constraints were 1 <= N <= 10^18, with a
+ * solution range of 1 <= M <= 10*18 above the given N; and 1 <= K <= 100.
+ *  While these ranges would fit in a lon long int, I decided to generalize
+ * it for all cases. Even though I only now realize that I ended up working
+ * outside of the scope of the problem, the exercise of figuring out a way
+ * to break through the limits of the machine was very interesting.
+ *  The problem could be solved by applying binary search to a long long int,
+ * which would have a much better time/space complexity. However, since the
+ * decision was made to generalize the code for any range of N, binary search
+ * was no longer an option. I believe the trade-off between performance and
+ * flexibility is worth it, though.
+ *  As a learning experience, this problem was very productive. Figuring out
+ * how to bypass the limits of the machine and finding an algorithm
+ * which didn't rely on brute force trial and error really forced me to
+ * think outside the box and approach number processing in a very different
+ * light.
+ *  I'll get on to code the binary search solution when I have enough time
+ * to do so, since I can foresee that that implementation will also raise
+ * some very interesting challenges.
+ * */
+
 #include <iostream>
 #include <vector>
 
