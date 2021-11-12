@@ -191,10 +191,12 @@ int arranjadoes() {
 
         std::cin >> s >> target;
 
-        stov(value, s);
-        getVal(value, target);
-        res.push_back(value);
-        value.clear();
+        if(stov(value, s)!= 0) std::cout << "Invalid Input!\n";
+        else {
+            getVal(value, target);
+            res.push_back(value);
+            value.clear();
+        }
         n--;
     }
     for(int i = 0; i < res.size(); i++)
