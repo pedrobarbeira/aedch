@@ -1,30 +1,52 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
-#include <fstream>
 #include <cmath>
+#include<fstream>
+#include <algorithm>
+#include <sstream>
 
-struct Sequence{
-    Sequence* parent = NULL;
-    std::string sequence;
-    uint16_t includes = 0;
-    std::vector<Sequence*> derivations;
-};
-
-bool bestKey(Sequence* s1, Sequence* s2){
-    if(s1->includes == s2->includes)
-        return s1->sequence.length() < s2->sequence.length();
-    else return s1->includes > s2->includes;
+void print(std::vector<std::string> v){
+    std::cout << v.size() << '\n';
+    for (auto it: v)
+        std::cout << it << " " << it.length() << '\n';
 }
 
-void cleanUp(std::vector<Sequence*>& in, std::string s1){
-    for(std::vector<Sequence*>::iterator it = in.begin(); it != in.end(); it++)
-        if((*it)->sequence.length() <= s1.length()) {
-            if (s1.find((*it)->sequence) != UINT32_MAX && s1 != (*it)->sequence) {
-                in.erase(it);
-                it--;
+bool longest(std::string s1, std::string s2){
+    return s1.length() > s2.length();
+}
+
+void cleanUp(std::vector<std::string>& dirty){
+    sort(dirty.begin(), dirty.end(), longest);
+    for(std::vector<std::string>::iterator it = dirty.begin(); it < dirty.end(); it++){
+        for(std::vector<std::string>::iterator et = it+1 ; et < dirty.end(); et++){
+            if((*it).find(*et) != UINT32_MAX && it != et){
+                dirty.erase(et);
+                et--;
             }
         }
+    }
+}
+
+//Returns how many letters are needed to concatenate s1 to s2
+int concNum(std::string s1, std::string s2){
+    std::string temp;
+    int i = 0, size;
+    if(s1.length() < s2.length()){
+        temp = s1;
+        s1 = s2;
+        s2 = temp;
+    }
+    size = s2.length();
+    while(i < size){
+        temp = s2.substr(0+i);
+        if(s1.find(temp) < UINT32_MAX) return i;
+        else {
+            temp = s2.substr(0, size-i);
+            if (s1.find(temp) != UINT32_MAX) return i;
+        }
+        i++;
+    }
+    return s1.size();
 }
 
 std::string concatenate(std::string s1, std::string s2){
@@ -51,124 +73,63 @@ std::string concatenate(std::string s1, std::string s2){
     return ret;
 }
 
-void potentialKeys(std::vector<std::string> inp, std::vector<std::string>& potential, int size){
-    std::string s1, s2;
-    for(int i = 0; i < inp.size(); i++){
-        for(int j = inp.size()-1; j > i; j--){
-            s1 = concatenate(inp[i], inp[j]);
-            if(s1.length() <= size) potential.push_back(s1);
-            s2 = concatenate(inp[j], inp[i]);
-            if(s2.length() <= size) potential.push_back(s2);
-        }
-    }
-}
-
-int countSub(std::vector<Sequence*> in, std::string key){
-    int i = 0;
-    for(auto it : in){
-        if(key.find(it->sequence) != UINT32_MAX) i++;
-    }
-    return i;
-}
-
-/**
- * Exhaustively combines strings and stores them in parent's derivation vector
- * @param in the vector of strings
- * @param parent the string to be combined with
- * @param size the string size restriction
- */
-void matchmaker(std::vector<Sequence*>in, Sequence* parent, int size){
-    std::string s;
-    for(auto it: in){
-        if(it->sequence != parent->sequence){
-            s = concatenate(it->sequence, parent->sequence);
-            if(s.length() < size){
-                Sequence* newSeq = new Sequence;
-                newSeq->sequence = s;
-                newSeq->parent = parent;
-                parent->derivations.push_back(newSeq);              //Stores them in parent's derivations vector
+int forgeKeys(std::vector<std::string>& v, std::vector<std::string>::iterator& s1, std::vector<std::string>::iterator& s2) {
+    int count, min = INT_MAX;
+    for (std::vector<std::string>::iterator it = v.begin(); it < v.end(); it++) {
+        for (std::vector<std::string>::iterator et = it+1; et < v.end(); et++) {
+            count = concNum((*it), (*et));
+            if (count < min) {
+                min = count;
+                s1 = it;
+                s2 = et;
             }
+            if (count == 1) return count;
         }
     }
+    return count;
 }
 
-//original method receives no parent and calls matchmaker
-/**
- * Checks the derivations vector of the parent against the atomic inputs to
- * determinate suitable candidate keys
- * @param in the atomic inputs vector
- * @param keys holds candidate keys
- * @param size the restriction max string length
- * @return the key, if it happens to find one; empty string otherwise
- */
-std::string forgeKeys(Sequence* parent, std::vector<Sequence*> in, std::vector<Sequence*>& keys, int size) {
-    std::vector<Sequence *>::iterator it = in.begin();
-    //Counts how many atomic substrings fit in each possible key
-    for (std::vector<Sequence *>::iterator d = (*it)->derivations.begin(); d != (*it)->derivations.end(); d++) {
-        (*d)->includes = countSub(in, (*d)->sequence);
-        if ((*d)->includes <= 2) {          //Eliminates redundant keys
-            (*it)->derivations.erase(d);
-            d--;
-        } else if ((*d)->includes == in.size()) return (*d)->sequence;
+std::string shortestSuperString(std::vector<std::string>& v){
+    int count;
+    cleanUp(v);
+    std::vector<std::string>::iterator s1, s2;
+    while(v.size() != 1) {
+        count = forgeKeys(v, s1, s2);
+        (*s1) = concatenate((*s1), (*s2));
+        cleanUp(v);
+        std::cout << v.size() << ' ';
     }
-    sort((*it)->derivations.begin(), (*it)->derivations.end(), bestKey);        //Sorts remaining keys
 
-    for (auto d: (*it)->derivations)                    //Cleans up the key vector
-        cleanUp((*it)->derivations, d->sequence);
-
-    keys.insert(keys.end(), (*it)->derivations.begin(), (*it)->derivations.end());
-    it++;
-    return "";
+    return v[0];
 }
 
-std::string shortestSuperString(std::vector<Sequence*> in, int size) {
-    std::vector<Sequence *> keys;
-    std::string res = "";
-    int j = 0;
-    sort(in.begin(), in.end(), bestKey);
-    //Cleans up values that are substrings of other values
-    for (int i = 0; i < in.size(); i++)
-        cleanUp(in, in[i]->sequence);
-    int i = 0; //counts increments on main sequence
-    //Might have to insert this into a larger while that cicles through all atomic inputs
-    //Calculates all permutations of all values and removes redundancy
-
-    matchmaker(in, (*in.begin()), size);
-    res = forgeKeys((*in.begin()),in, keys, size);                //has non-redundant keys forged from it[0]
-    std::vector<Sequence*>::iterator k = keys.begin();
-
-    while (res.empty() || k != keys.end()) {
-        //At this point i have a vector with the best possible candidate keys
-        //I want to apply the same method to them:
-        //  combine each key with each atomic input
-        //  eliminate redundancy
-        //      need a counter to account for powers of 2 - try to apply this to brute force method, since this was the problem that kept it from converging
-        //  repeat the process to exhaustion
-        //Eventually we'll either reach a key that workd, or an empty derivations vector -> all keys will have length > size
-        //Iterate to next key in line - either next in parent's derivation vector, or next in original vector
-    }
-    std::cout << "res: " << res << std::endl;
-}
-
-int main() {
-    std::vector<Sequence*> input;
+int main(){
+    std::vector<std::string> input;
     std::ifstream infile;
+    std::ofstream outfile("C:\\Coding\\Cpp\\AEDCH\\week2\\dnafiles\\outfile.txt");
+    std::string infileName;
     std::string in;
-    int q, size;
+    int q, n = 1;
+    while(n <= 6) {
+        infileName = "C:\\Coding\\Cpp\\AEDCH\\week2\\dnafiles\\inp" + std::to_string(n) + ".txt";
+        std::cout << '\n' << infileName << '\n';
+        infile.open(infileName);
+        infile >> q;
 
-    infile.open("C:\\Coding\\Cpp\\AEDCH\\week2\\dnafiles\\inp3.txt");
-    infile >> q >> size;
-
-    while(q != 0){
-        infile >> in;
-        Sequence* newSeq = new Sequence;
-        (*newSeq).sequence = in;
-        input.push_back(newSeq);
-        q--;
+        while (q != 0) {
+            infile >> in;
+            input.push_back(in);
+            q--;
+        }
+        std::cout << "Computing input " << n << '\n';
+        in = shortestSuperString(input);
+        outfile << in.length() << '\n' << in << '\n';
+        n++;
+        input.clear();
+        infile.close();
     }
 
-    shortestSuperString(input, size);
-
+    outfile.close();
 
     return 0;
 }
