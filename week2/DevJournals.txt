@@ -1,0 +1,44 @@
+18/11/2021 - 1:40
+The process of implementing the shortest superstring is being quite the
+mental challenge. 
+
+I ended up figuring out (another) weird solution. By abstracting the inputs
+into a Sequence object, a tree-like structure was created. Each Sequence
+object has a parent(Sequence*), a sequence(string), an include(int), and
+a derivations(vector<Sequence*>). It's some sort of multi-tree structure.
+The include attribute is an integer which stands for how many atomic strings
+that particular sequence includes. The goal then becomes finding a sequence
+in which include == in.size().
+
+To do this we're trying to apply a brute-force algorithm into in some sort
+of abstract recursion manner. We came very close to hitting the mark on a
+solution, but unfortunatelly forgot to account for the need of the cleanUp
+method, which eliminates redundant sequences, to have in increment in powers
+of two: by first generation sequences which have an include = 2 are redundant,
+since they only include those strings which formed them. For second generation
+strings, include = 4 signifies redundancy, and so on and so forth.
+
+This small mistake made the algorithm fall into the infinite recursion trap.
+Unfortunately, by the time we noticed this slip, it was already too late, and 
+another different solution was being implemented. Since a VCS wasn't properly 
+used, the mental effort to rebuild the previous solution was too big of an
+increment, therefore it was chosen to comment about what was going on, about
+the said need for a power of 2 counter, and the document was closed.
+
+Hopefully tomorrow, with a fresh head, the solution will be easier to implement.
+In spite of the roadblocks and landslides, it feels like a very strong solu-
+tion, which combines objects and recursion in a very innovative way, at least
+for the unexperienced eyes of this developer. The process of figuring out how 
+to reduce possible keys by eliminating redundancy was quite interesting. Coding
+in that abstract-recursion paradigm was also quite the challenge - keeping
+track of how the tree would branch out while coding it, and trying to fit
+different layers of stop conditions dynamically was almost brain melting, which
+means we're on the right track to get better.
+
+Now for some relaxation - ended up not stuyding anything else the whole day.
+Fortunately almost everything is up to date, and there's no swamping or flooding
+in any form of way. Let's try to keep it this way for as long as possible, so
+we can go through the experience of grinding away at these weekly challenges.
+
+Cheers!
+- Pedro Barbeira
