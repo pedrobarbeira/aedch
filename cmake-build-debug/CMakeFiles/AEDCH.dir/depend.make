@@ -3,3 +3,7 @@
 
 CMakeFiles/AEDCH.dir/main.cpp.obj: ../main.cpp
 
+CMakeFiles/AEDCH.dir/week2/aliendna.cpp.obj: ../week2/aliendna.cpp
+
+CMakeFiles/AEDCH.dir/week2/closestsum.cpp.obj: ../week2/closestsum.cpp
+

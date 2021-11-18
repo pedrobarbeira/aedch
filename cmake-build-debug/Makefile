@@ -169,6 +169,60 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+week2/aliendna.obj: week2/aliendna.cpp.obj
+
+.PHONY : week2/aliendna.obj
+
+# target to build an object file
+week2/aliendna.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/week2/aliendna.cpp.obj
+.PHONY : week2/aliendna.cpp.obj
+
+week2/aliendna.i: week2/aliendna.cpp.i
+
+.PHONY : week2/aliendna.i
+
+# target to preprocess a source file
+week2/aliendna.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/week2/aliendna.cpp.i
+.PHONY : week2/aliendna.cpp.i
+
+week2/aliendna.s: week2/aliendna.cpp.s
+
+.PHONY : week2/aliendna.s
+
+# target to generate assembly for a file
+week2/aliendna.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/week2/aliendna.cpp.s
+.PHONY : week2/aliendna.cpp.s
+
+week2/closestsum.obj: week2/closestsum.cpp.obj
+
+.PHONY : week2/closestsum.obj
+
+# target to build an object file
+week2/closestsum.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/week2/closestsum.cpp.obj
+.PHONY : week2/closestsum.cpp.obj
+
+week2/closestsum.i: week2/closestsum.cpp.i
+
+.PHONY : week2/closestsum.i
+
+# target to preprocess a source file
+week2/closestsum.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/week2/closestsum.cpp.i
+.PHONY : week2/closestsum.cpp.i
+
+week2/closestsum.s: week2/closestsum.cpp.s
+
+.PHONY : week2/closestsum.s
+
+# target to generate assembly for a file
+week2/closestsum.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/week2/closestsum.cpp.s
+.PHONY : week2/closestsum.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -181,6 +235,12 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... week2/aliendna.obj
+	@echo ... week2/aliendna.i
+	@echo ... week2/aliendna.s
+	@echo ... week2/closestsum.obj
+	@echo ... week2/closestsum.i
+	@echo ... week2/closestsum.s
 .PHONY : help
 
 

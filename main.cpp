@@ -1,207 +1,174 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <fstream>
+#include <cmath>
 
-short MAX_DIGIT = 9;
+struct Sequence{
+    Sequence* parent = NULL;
+    std::string sequence;
+    uint16_t includes = 0;
+    std::vector<Sequence*> derivations;
+};
 
-/**
- * Prints the elements of a value vector
- * @param v the value vector
- * @param o the target ostream
- */
-void printVal(std::vector<short>& v, std::ostream& o){                                                                  //Used ostream to easily be able
-    short max = v.size();                                                                                               //to print into a file and check
-    for(int i = 0; i < max; i++)                                                                                        //answers
-        o << v[i];
-    o << std::endl;
+bool bestKey(Sequence* s1, Sequence* s2){
+    if(s1->includes == s2->includes)
+        return s1->sequence.length() < s2->sequence.length();
+    else return s1->includes > s2->includes;
 }
 
-/**
- * Calculates the sum of the digits of a string
- * @param s the string
- * @param res the sum of the digits
- */
-short vSum(const std::vector<short>& v){
-    short res = 0;
-    for(int i = 0; i < v.size(); i++)
-        res += v[i];
-    return res;
+void cleanUp(std::vector<Sequence*>& in, std::string s1){
+    for(std::vector<Sequence*>::iterator it = in.begin(); it != in.end(); it++)
+        if((*it)->sequence.length() <= s1.length()) {
+            if (s1.find((*it)->sequence) != UINT32_MAX && s1 != (*it)->sequence) {
+                in.erase(it);
+                it--;
+            }
+        }
 }
 
-/**
- * Gives the value vector n+1 extra slots
- * @param v the value vector
- * @param slots the extra slots
- */
-void extend(std::vector<short>&v, short n = 0){
-    std::vector<short> newV;
-    newV.push_back(1);
-    for(int i = 0; i < v.size() + n; i++)
-        newV.push_back(0);
-    v = newV;
-}
-
-/**
- * Increments 1 to the vector of digits
- * @param v the vector
- */
-void increment(std::vector<short>&v, short index){
-    for(int i = index; i >= 0; i--){
-        if(v[i] == 9){                                                                                                  //Case where the digit is exhausted
-            if(i == 0) extend(v);
-            else v[i] = 0;
+std::string concatenate(std::string s1, std::string s2){
+    std::string ret = s1 + s2,
+            t1, t2;
+    int i = std::min(s1.length(), s2.length()) - 1;
+    while(i > 0){
+        t1 = s1.substr(s1.length()-i, i);
+        t2 = s2.substr(0, i);
+        if(t1 == t2) {
+            ret = s1.substr(0, s1.length()) + s2.substr(i);
+            break;
         }
         else {
-            v[i]++;                                                                                                     //Base case
-            return;
+            t1 = s1.substr(0, i);
+            t2 = s2.substr(s2.length()-i, i);
+            if( t1 == t2) {
+                ret = s2.substr(0, s2.length()) + s1.substr(i, s1.length());
+                break;
+            }
+            else i--;
+        }
+    }
+    return ret;
+}
+
+void potentialKeys(std::vector<std::string> inp, std::vector<std::string>& potential, int size){
+    std::string s1, s2;
+    for(int i = 0; i < inp.size(); i++){
+        for(int j = inp.size()-1; j > i; j--){
+            s1 = concatenate(inp[i], inp[j]);
+            if(s1.length() <= size) potential.push_back(s1);
+            s2 = concatenate(inp[j], inp[i]);
+            if(s2.length() <= size) potential.push_back(s2);
         }
     }
 }
 
-
-
-/**
- * Case where the original sum is over target
- * @param v the value vector
- * @param target the target
- * @param sum the sum
- */
-void overTarget(std::vector<short>&v, short target, short sum){
-    short diff, i = short(v.size()-1);                                                                                  //In this case we're sure that the number will
-    sum = vSum(v);
-    diff = short(target-sum);
-    while(diff!=0){
-        if(diff >= MAX_DIGIT){                                                                                          //If diff >= 9, iteratively sets v[i] to 9 and
-            v[i] = MAX_DIGIT;                                                                                           //subtracts 9 from diff.
-            diff -= MAX_DIGIT;
-            i--;
-        }
-        else {
-            v[i] = diff;                                                                                                //Else just sets v[i] = diff
-            return;
-        }
+int countSub(std::vector<Sequence*> in, std::string key){
+    int i = 0;
+    for(auto it : in){
+        if(key.find(it->sequence) != UINT32_MAX) i++;
     }
+    return i;
 }
 
 /**
- * Case where the original sum is under  target
- * @param v the value vector
- * @param target the target
- * @param sum the difference between sum and target
+ * Exhaustively combines strings and stores them in parent's derivation vector
+ * @param in the vector of strings
+ * @param parent the string to be combined with
+ * @param size the string size restriction
  */
-void underTarget(std::vector<short>&v, short target, short diff){
-    int i = v.size() -1;
-    short lastDiff;
-    while(diff != 0){
-        lastDiff = MAX_DIGIT - v[i];                                                                                    //See's how many increments can fit in v[i]
-        if(lastDiff == 0) i--;                                                                                          //v[i] is exhausted, proced to next iteration
-        else {
-            if (diff <= lastDiff) {                                                                                     //We can add diff to v[i]
-                v[i] += diff;
-                return;
-            } else {
-                diff -= lastDiff;                                                                                       //Sets v[i] to 9 and updates diff accordingly
-                v[i] = 9;
+void matchmaker(std::vector<Sequence*>in, Sequence* parent, int size){
+    std::string s;
+    for(auto it: in){
+        if(it->sequence != parent->sequence){
+            s = concatenate(it->sequence, parent->sequence);
+            if(s.length() < size){
+                Sequence* newSeq = new Sequence;
+                newSeq->sequence = s;
+                newSeq->parent = parent;
+                parent->derivations.push_back(newSeq);              //Stores them in parent's derivations vector
             }
         }
     }
 }
 
+//original method receives no parent and calls matchmaker
 /**
- * Fixes the value, making sure it's ready to go through the findNum() function
- * @param v the value vector
- * @param target the target
+ * Checks the derivations vector of the parent against the atomic inputs to
+ * determinate suitable candidate keys
+ * @param in the atomic inputs vector
+ * @param keys holds candidate keys
+ * @param size the restriction max string length
+ * @return the key, if it happens to find one; empty string otherwise
  */
-void fixNum(std::vector<short>& v, short target) {
-    short partialSum = 0;
-    bool zero = false;
-    if (v[0] >= target) extend(v);                                                                                  //If the first digit > target, extends vector
-    else {
-        partialSum += v[0];                                                                                             //Calculates partial sum untill partialSum > target
-        for (int i = 1; i < v.size(); i++) {
-            if(!zero) {
-                partialSum += v[i];
-                if (partialSum >= target) {                                                                             //Increments the "preceding digit" and adjusts iterator
-                    increment(v, short(i - 1));                                                               //i.e 1[7]2 -> 2[7]2
-                    i--;
-                    zero = true;                                                                                        //Triggers flag to set remaining digits to zero
-                }                                                                                                       //i.e 2[7]2 -> 200[]
-            }
-            else v[i] = 0;
-        }
+std::string forgeKeys(Sequence* parent, std::vector<Sequence*> in, std::vector<Sequence*>& keys, int size) {
+    std::vector<Sequence *>::iterator it = in.begin();
+    //Counts how many atomic substrings fit in each possible key
+    for (std::vector<Sequence *>::iterator d = (*it)->derivations.begin(); d != (*it)->derivations.end(); d++) {
+        (*d)->includes = countSub(in, (*d)->sequence);
+        if ((*d)->includes <= 2) {          //Eliminates redundant keys
+            (*it)->derivations.erase(d);
+            d--;
+        } else if ((*d)->includes == in.size()) return (*d)->sequence;
     }
+    sort((*it)->derivations.begin(), (*it)->derivations.end(), bestKey);        //Sorts remaining keys
+
+    for (auto d: (*it)->derivations)                    //Cleans up the key vector
+        cleanUp((*it)->derivations, d->sequence);
+
+    keys.insert(keys.end(), (*it)->derivations.begin(), (*it)->derivations.end());
+    it++;
+    return "";
 }
 
-/**
- * Acts as interface between main and worhorse functions. Adjusts the vector
- * size and ensures everything is set and ready to go
- * @param v the value
- * @param target the target value
- */
-void getVal(std::vector<short>& v, short target){
-    short slots;
-    if (target > MAX_DIGIT * v.size()) {                                                                                //Ensures the number has enough digits to reach target
-        slots = (short)(target / 9);
-        extend(v, short(slots - v.size()));
-    }
+std::string shortestSuperString(std::vector<Sequence*> in, int size) {
+    std::vector<Sequence *> keys;
+    std::string res = "";
+    int j = 0;
+    sort(in.begin(), in.end(), bestKey);
+    //Cleans up values that are substrings of other values
+    for (int i = 0; i < in.size(); i++)
+        cleanUp(in, in[i]->sequence);
+    int i = 0; //counts increments on main sequence
+    //Might have to insert this into a larger while that cicles through all atomic inputs
+    //Calculates all permutations of all values and removes redundancy
 
-    short sum = vSum(v);
-    if(sum >= target) {                                                                                                 //If sum > target, adjusts value to the form X..X0..0
-        fixNum(v, target);                                                                                          //with sum < target
-        overTarget(v, target, sum);
-    }
-    else underTarget(v, target, short(target-sum));                                                             //Else calls underTarget
+    matchmaker(in, (*in.begin()), size);
+    res = forgeKeys((*in.begin()),in, keys, size);                //has non-redundant keys forged from it[0]
+    std::vector<Sequence*>::iterator k = keys.begin();
 
+    while (res.empty() || k != keys.end()) {
+        //At this point i have a vector with the best possible candidate keys
+        //I want to apply the same method to them:
+        //  combine each key with each atomic input
+        //  eliminate redundancy
+        //      need a counter to account for powers of 2 - try to apply this to brute force method, since this was the problem that kept it from converging
+        //  repeat the process to exhaustion
+        //Eventually we'll either reach a key that workd, or an empty derivations vector -> all keys will have length > size
+        //Iterate to next key in line - either next in parent's derivation vector, or next in original vector
+    }
+    std::cout << "res: " << res << std::endl;
 }
 
-/**
- * Reads input, extracting each digit as a character and storing it in
- * a short int vector. Checks if input is valid
- * @param value the vector
- * @return 0 upon success
- */
-int readInput(std::vector<short>& value){
-    char c;
-    while(true){
-        c = getchar();                                                                                                  //Extracts a char from stdin. If it's a digit
-        if (!isdigit(c)){                                                                                               //stores it in vector. If it's a whitespace
-            if(c != '\n'){                                                                                              //returns. If neither, exists with error code 1
-                if (isblank(c)) break;
-                else return 1;
-            }
-        }
-        else value.push_back(c - '0');
-    }
-    return 0;
-}
-
-/**
- * Receives a list of numbers (n) and their respective targets. Calculates the
- * closest number above n which the sum of all it's digits equals target
- * @return 0 upon success
- */
 int main() {
-    short n, target;
-    std::vector<std::vector<short>> res;
-    std::vector<short> value;
+    std::vector<Sequence*> input;
+    std::ifstream infile;
+    std::string in;
+    int q, size;
 
-    std::cin >> n;
+    infile.open("C:\\Coding\\Cpp\\AEDCH\\week2\\dnafiles\\inp3.txt");
+    infile >> q >> size;
 
-    while (n > 0) {
-
-       if(readInput(value) != 0) std::cout << "Invalid Input!\n";                                                   //Reads input and checks for errors
-
-        std::cin >> target;
-
-        if(target > 100) std::cout << "Invalid Input!\n";                                                               //Ensures target is within problem constraints
-        else {
-                getVal(value, target);                                                                              //Calculates value and stores it in answer vector
-                res.push_back(value);
-                value.clear();
-        }
-        n--;
+    while(q != 0){
+        infile >> in;
+        Sequence* newSeq = new Sequence;
+        (*newSeq).sequence = in;
+        input.push_back(newSeq);
+        q--;
     }
-    for(int i = 0; i < res.size(); i++)                                                                                 //Prints out answer vector to stdout
-        printVal(res[i], std::cout);
+
+    shortestSuperString(input, size);
+
 
     return 0;
 }
