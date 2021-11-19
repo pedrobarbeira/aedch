@@ -7,3 +7,5 @@ CMakeFiles/AEDCH.dir/week2/aliendna.cpp.obj: ../week2/aliendna.cpp
 
 CMakeFiles/AEDCH.dir/week2/closestsum.cpp.obj: ../week2/closestsum.cpp
 
+CMakeFiles/AEDCH.dir/week2/shortestcommonstring.cpp.obj: ../week2/shortestcommonstring.cpp
+

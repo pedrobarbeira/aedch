@@ -11,12 +11,4 @@ iostream
 -
 vector
 -
-cmath
--
-fstream
--
-algorithm
--
-sstream
--
 

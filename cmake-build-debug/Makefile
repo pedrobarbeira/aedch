@@ -169,6 +169,33 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+maxdays.obj: maxdays.cpp.obj
+
+.PHONY : maxdays.obj
+
+# target to build an object file
+maxdays.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/maxdays.cpp.obj
+.PHONY : maxdays.cpp.obj
+
+maxdays.i: maxdays.cpp.i
+
+.PHONY : maxdays.i
+
+# target to preprocess a source file
+maxdays.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/maxdays.cpp.i
+.PHONY : maxdays.cpp.i
+
+maxdays.s: maxdays.cpp.s
+
+.PHONY : maxdays.s
+
+# target to generate assembly for a file
+maxdays.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/maxdays.cpp.s
+.PHONY : maxdays.cpp.s
+
 week2/aliendna.obj: week2/aliendna.cpp.obj
 
 .PHONY : week2/aliendna.obj
@@ -223,6 +250,33 @@ week2/closestsum.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/week2/closestsum.cpp.s
 .PHONY : week2/closestsum.cpp.s
 
+week2/shortestcommonstring.obj: week2/shortestcommonstring.cpp.obj
+
+.PHONY : week2/shortestcommonstring.obj
+
+# target to build an object file
+week2/shortestcommonstring.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/week2/shortestcommonstring.cpp.obj
+.PHONY : week2/shortestcommonstring.cpp.obj
+
+week2/shortestcommonstring.i: week2/shortestcommonstring.cpp.i
+
+.PHONY : week2/shortestcommonstring.i
+
+# target to preprocess a source file
+week2/shortestcommonstring.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/week2/shortestcommonstring.cpp.i
+.PHONY : week2/shortestcommonstring.cpp.i
+
+week2/shortestcommonstring.s: week2/shortestcommonstring.cpp.s
+
+.PHONY : week2/shortestcommonstring.s
+
+# target to generate assembly for a file
+week2/shortestcommonstring.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/week2/shortestcommonstring.cpp.s
+.PHONY : week2/shortestcommonstring.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -235,12 +289,18 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... maxdays.obj
+	@echo ... maxdays.i
+	@echo ... maxdays.s
 	@echo ... week2/aliendna.obj
 	@echo ... week2/aliendna.i
 	@echo ... week2/aliendna.s
 	@echo ... week2/closestsum.obj
 	@echo ... week2/closestsum.i
 	@echo ... week2/closestsum.s
+	@echo ... week2/shortestcommonstring.obj
+	@echo ... week2/shortestcommonstring.i
+	@echo ... week2/shortestcommonstring.s
 .PHONY : help
 
 

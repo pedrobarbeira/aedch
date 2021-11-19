@@ -3,8 +3,10 @@ file(REMOVE_RECURSE
   "AEDCH.exe.manifest"
   "AEDCH.pdb"
   "CMakeFiles/AEDCH.dir/main.cpp.obj"
+  "CMakeFiles/AEDCH.dir/maxdays.cpp.obj"
   "CMakeFiles/AEDCH.dir/week2/aliendna.cpp.obj"
   "CMakeFiles/AEDCH.dir/week2/closestsum.cpp.obj"
+  "CMakeFiles/AEDCH.dir/week2/shortestcommonstring.cpp.obj"
   "libAEDCH.dll.a"
 )
 
