@@ -169,33 +169,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-maxdays.obj: maxdays.cpp.obj
-
-.PHONY : maxdays.obj
-
-# target to build an object file
-maxdays.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/maxdays.cpp.obj
-.PHONY : maxdays.cpp.obj
-
-maxdays.i: maxdays.cpp.i
-
-.PHONY : maxdays.i
-
-# target to preprocess a source file
-maxdays.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/maxdays.cpp.i
-.PHONY : maxdays.cpp.i
-
-maxdays.s: maxdays.cpp.s
-
-.PHONY : maxdays.s
-
-# target to generate assembly for a file
-maxdays.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/maxdays.cpp.s
-.PHONY : maxdays.cpp.s
-
 week2/aliendna.obj: week2/aliendna.cpp.obj
 
 .PHONY : week2/aliendna.obj
@@ -250,6 +223,33 @@ week2/closestsum.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/week2/closestsum.cpp.s
 .PHONY : week2/closestsum.cpp.s
 
+week2/maxdays.obj: week2/maxdays.cpp.obj
+
+.PHONY : week2/maxdays.obj
+
+# target to build an object file
+week2/maxdays.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/week2/maxdays.cpp.obj
+.PHONY : week2/maxdays.cpp.obj
+
+week2/maxdays.i: week2/maxdays.cpp.i
+
+.PHONY : week2/maxdays.i
+
+# target to preprocess a source file
+week2/maxdays.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/week2/maxdays.cpp.i
+.PHONY : week2/maxdays.cpp.i
+
+week2/maxdays.s: week2/maxdays.cpp.s
+
+.PHONY : week2/maxdays.s
+
+# target to generate assembly for a file
+week2/maxdays.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/week2/maxdays.cpp.s
+.PHONY : week2/maxdays.cpp.s
+
 week2/shortestcommonstring.obj: week2/shortestcommonstring.cpp.obj
 
 .PHONY : week2/shortestcommonstring.obj
@@ -277,6 +277,60 @@ week2/shortestcommonstring.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/week2/shortestcommonstring.cpp.s
 .PHONY : week2/shortestcommonstring.cpp.s
 
+week3/pimpampum.obj: week3/pimpampum.cpp.obj
+
+.PHONY : week3/pimpampum.obj
+
+# target to build an object file
+week3/pimpampum.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/week3/pimpampum.cpp.obj
+.PHONY : week3/pimpampum.cpp.obj
+
+week3/pimpampum.i: week3/pimpampum.cpp.i
+
+.PHONY : week3/pimpampum.i
+
+# target to preprocess a source file
+week3/pimpampum.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/week3/pimpampum.cpp.i
+.PHONY : week3/pimpampum.cpp.i
+
+week3/pimpampum.s: week3/pimpampum.cpp.s
+
+.PHONY : week3/pimpampum.s
+
+# target to generate assembly for a file
+week3/pimpampum.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/week3/pimpampum.cpp.s
+.PHONY : week3/pimpampum.cpp.s
+
+week3/rpncalc.obj: week3/rpncalc.cpp.obj
+
+.PHONY : week3/rpncalc.obj
+
+# target to build an object file
+week3/rpncalc.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/week3/rpncalc.cpp.obj
+.PHONY : week3/rpncalc.cpp.obj
+
+week3/rpncalc.i: week3/rpncalc.cpp.i
+
+.PHONY : week3/rpncalc.i
+
+# target to preprocess a source file
+week3/rpncalc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/week3/rpncalc.cpp.i
+.PHONY : week3/rpncalc.cpp.i
+
+week3/rpncalc.s: week3/rpncalc.cpp.s
+
+.PHONY : week3/rpncalc.s
+
+# target to generate assembly for a file
+week3/rpncalc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AEDCH.dir\build.make CMakeFiles/AEDCH.dir/week3/rpncalc.cpp.s
+.PHONY : week3/rpncalc.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -289,18 +343,24 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... maxdays.obj
-	@echo ... maxdays.i
-	@echo ... maxdays.s
 	@echo ... week2/aliendna.obj
 	@echo ... week2/aliendna.i
 	@echo ... week2/aliendna.s
 	@echo ... week2/closestsum.obj
 	@echo ... week2/closestsum.i
 	@echo ... week2/closestsum.s
+	@echo ... week2/maxdays.obj
+	@echo ... week2/maxdays.i
+	@echo ... week2/maxdays.s
 	@echo ... week2/shortestcommonstring.obj
 	@echo ... week2/shortestcommonstring.i
 	@echo ... week2/shortestcommonstring.s
+	@echo ... week3/pimpampum.obj
+	@echo ... week3/pimpampum.i
+	@echo ... week3/pimpampum.s
+	@echo ... week3/rpncalc.obj
+	@echo ... week3/rpncalc.i
+	@echo ... week3/rpncalc.s
 .PHONY : help
 
 

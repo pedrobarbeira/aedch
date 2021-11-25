@@ -30,7 +30,7 @@ int maxDistance(std::vector<int> v, int d){
     return high;
 }
 
-int main(){
+int maxdays(){
     int n, d, p, k;
     std::vector<int> distances;
     std::vector<int> days;

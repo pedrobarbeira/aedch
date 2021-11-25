@@ -5,10 +5,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Coding/Cpp/AEDCH/main.cpp" "C:/Coding/Cpp/AEDCH/cmake-build-debug/CMakeFiles/AEDCH.dir/main.cpp.obj"
-  "C:/Coding/Cpp/AEDCH/maxdays.cpp" "C:/Coding/Cpp/AEDCH/cmake-build-debug/CMakeFiles/AEDCH.dir/maxdays.cpp.obj"
   "C:/Coding/Cpp/AEDCH/week2/aliendna.cpp" "C:/Coding/Cpp/AEDCH/cmake-build-debug/CMakeFiles/AEDCH.dir/week2/aliendna.cpp.obj"
   "C:/Coding/Cpp/AEDCH/week2/closestsum.cpp" "C:/Coding/Cpp/AEDCH/cmake-build-debug/CMakeFiles/AEDCH.dir/week2/closestsum.cpp.obj"
+  "C:/Coding/Cpp/AEDCH/week2/maxdays.cpp" "C:/Coding/Cpp/AEDCH/cmake-build-debug/CMakeFiles/AEDCH.dir/week2/maxdays.cpp.obj"
   "C:/Coding/Cpp/AEDCH/week2/shortestcommonstring.cpp" "C:/Coding/Cpp/AEDCH/cmake-build-debug/CMakeFiles/AEDCH.dir/week2/shortestcommonstring.cpp.obj"
+  "C:/Coding/Cpp/AEDCH/week3/pimpampum.cpp" "C:/Coding/Cpp/AEDCH/cmake-build-debug/CMakeFiles/AEDCH.dir/week3/pimpampum.cpp.obj"
+  "C:/Coding/Cpp/AEDCH/week3/rpncalc.cpp" "C:/Coding/Cpp/AEDCH/cmake-build-debug/CMakeFiles/AEDCH.dir/week3/rpncalc.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

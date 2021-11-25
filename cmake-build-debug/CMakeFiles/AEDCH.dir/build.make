@@ -128,18 +128,44 @@ CMakeFiles/AEDCH.dir/week2/shortestcommonstring.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDCH.dir/week2/shortestcommonstring.cpp.s"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Coding\Cpp\AEDCH\week2\shortestcommonstring.cpp -o CMakeFiles\AEDCH.dir\week2\shortestcommonstring.cpp.s
 
-CMakeFiles/AEDCH.dir/maxdays.cpp.obj: CMakeFiles/AEDCH.dir/flags.make
-CMakeFiles/AEDCH.dir/maxdays.cpp.obj: ../maxdays.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Coding\Cpp\AEDCH\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/AEDCH.dir/maxdays.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AEDCH.dir\maxdays.cpp.obj -c C:\Coding\Cpp\AEDCH\maxdays.cpp
+CMakeFiles/AEDCH.dir/week2/maxdays.cpp.obj: CMakeFiles/AEDCH.dir/flags.make
+CMakeFiles/AEDCH.dir/week2/maxdays.cpp.obj: ../week2/maxdays.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Coding\Cpp\AEDCH\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/AEDCH.dir/week2/maxdays.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AEDCH.dir\week2\maxdays.cpp.obj -c C:\Coding\Cpp\AEDCH\week2\maxdays.cpp
 
-CMakeFiles/AEDCH.dir/maxdays.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AEDCH.dir/maxdays.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Coding\Cpp\AEDCH\maxdays.cpp > CMakeFiles\AEDCH.dir\maxdays.cpp.i
+CMakeFiles/AEDCH.dir/week2/maxdays.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AEDCH.dir/week2/maxdays.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Coding\Cpp\AEDCH\week2\maxdays.cpp > CMakeFiles\AEDCH.dir\week2\maxdays.cpp.i
 
-CMakeFiles/AEDCH.dir/maxdays.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDCH.dir/maxdays.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Coding\Cpp\AEDCH\maxdays.cpp -o CMakeFiles\AEDCH.dir\maxdays.cpp.s
+CMakeFiles/AEDCH.dir/week2/maxdays.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDCH.dir/week2/maxdays.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Coding\Cpp\AEDCH\week2\maxdays.cpp -o CMakeFiles\AEDCH.dir\week2\maxdays.cpp.s
+
+CMakeFiles/AEDCH.dir/week3/pimpampum.cpp.obj: CMakeFiles/AEDCH.dir/flags.make
+CMakeFiles/AEDCH.dir/week3/pimpampum.cpp.obj: ../week3/pimpampum.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Coding\Cpp\AEDCH\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/AEDCH.dir/week3/pimpampum.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AEDCH.dir\week3\pimpampum.cpp.obj -c C:\Coding\Cpp\AEDCH\week3\pimpampum.cpp
+
+CMakeFiles/AEDCH.dir/week3/pimpampum.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AEDCH.dir/week3/pimpampum.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Coding\Cpp\AEDCH\week3\pimpampum.cpp > CMakeFiles\AEDCH.dir\week3\pimpampum.cpp.i
+
+CMakeFiles/AEDCH.dir/week3/pimpampum.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDCH.dir/week3/pimpampum.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Coding\Cpp\AEDCH\week3\pimpampum.cpp -o CMakeFiles\AEDCH.dir\week3\pimpampum.cpp.s
+
+CMakeFiles/AEDCH.dir/week3/rpncalc.cpp.obj: CMakeFiles/AEDCH.dir/flags.make
+CMakeFiles/AEDCH.dir/week3/rpncalc.cpp.obj: ../week3/rpncalc.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Coding\Cpp\AEDCH\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/AEDCH.dir/week3/rpncalc.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AEDCH.dir\week3\rpncalc.cpp.obj -c C:\Coding\Cpp\AEDCH\week3\rpncalc.cpp
+
+CMakeFiles/AEDCH.dir/week3/rpncalc.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AEDCH.dir/week3/rpncalc.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Coding\Cpp\AEDCH\week3\rpncalc.cpp > CMakeFiles\AEDCH.dir\week3\rpncalc.cpp.i
+
+CMakeFiles/AEDCH.dir/week3/rpncalc.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AEDCH.dir/week3/rpncalc.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Coding\Cpp\AEDCH\week3\rpncalc.cpp -o CMakeFiles\AEDCH.dir\week3\rpncalc.cpp.s
 
 # Object files for target AEDCH
 AEDCH_OBJECTS = \
@@ -147,7 +173,9 @@ AEDCH_OBJECTS = \
 "CMakeFiles/AEDCH.dir/week2/aliendna.cpp.obj" \
 "CMakeFiles/AEDCH.dir/week2/closestsum.cpp.obj" \
 "CMakeFiles/AEDCH.dir/week2/shortestcommonstring.cpp.obj" \
-"CMakeFiles/AEDCH.dir/maxdays.cpp.obj"
+"CMakeFiles/AEDCH.dir/week2/maxdays.cpp.obj" \
+"CMakeFiles/AEDCH.dir/week3/pimpampum.cpp.obj" \
+"CMakeFiles/AEDCH.dir/week3/rpncalc.cpp.obj"
 
 # External object files for target AEDCH
 AEDCH_EXTERNAL_OBJECTS =
@@ -156,12 +184,14 @@ AEDCH.exe: CMakeFiles/AEDCH.dir/main.cpp.obj
 AEDCH.exe: CMakeFiles/AEDCH.dir/week2/aliendna.cpp.obj
 AEDCH.exe: CMakeFiles/AEDCH.dir/week2/closestsum.cpp.obj
 AEDCH.exe: CMakeFiles/AEDCH.dir/week2/shortestcommonstring.cpp.obj
-AEDCH.exe: CMakeFiles/AEDCH.dir/maxdays.cpp.obj
+AEDCH.exe: CMakeFiles/AEDCH.dir/week2/maxdays.cpp.obj
+AEDCH.exe: CMakeFiles/AEDCH.dir/week3/pimpampum.cpp.obj
+AEDCH.exe: CMakeFiles/AEDCH.dir/week3/rpncalc.cpp.obj
 AEDCH.exe: CMakeFiles/AEDCH.dir/build.make
 AEDCH.exe: CMakeFiles/AEDCH.dir/linklibs.rsp
 AEDCH.exe: CMakeFiles/AEDCH.dir/objects1.rsp
 AEDCH.exe: CMakeFiles/AEDCH.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Coding\Cpp\AEDCH\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable AEDCH.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Coding\Cpp\AEDCH\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable AEDCH.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\AEDCH.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

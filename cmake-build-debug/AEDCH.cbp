@@ -83,16 +83,22 @@
 		<Unit filename="C:/Coding/Cpp/AEDCH/main.cpp">
 			<Option target="AEDCH"/>
 		</Unit>
-		<Unit filename="C:/Coding/Cpp/AEDCH/maxdays.cpp">
-			<Option target="AEDCH"/>
-		</Unit>
 		<Unit filename="C:/Coding/Cpp/AEDCH/week2/aliendna.cpp">
 			<Option target="AEDCH"/>
 		</Unit>
 		<Unit filename="C:/Coding/Cpp/AEDCH/week2/closestsum.cpp">
 			<Option target="AEDCH"/>
 		</Unit>
+		<Unit filename="C:/Coding/Cpp/AEDCH/week2/maxdays.cpp">
+			<Option target="AEDCH"/>
+		</Unit>
 		<Unit filename="C:/Coding/Cpp/AEDCH/week2/shortestcommonstring.cpp">
+			<Option target="AEDCH"/>
+		</Unit>
+		<Unit filename="C:/Coding/Cpp/AEDCH/week3/pimpampum.cpp">
+			<Option target="AEDCH"/>
+		</Unit>
+		<Unit filename="C:/Coding/Cpp/AEDCH/week3/rpncalc.cpp">
 			<Option target="AEDCH"/>
 		</Unit>
 		<Unit filename="C:/Coding/Cpp/AEDCH/CMakeLists.txt">
